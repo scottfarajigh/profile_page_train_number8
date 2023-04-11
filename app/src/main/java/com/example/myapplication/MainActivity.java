@@ -139,4 +139,12 @@ public class MainActivity extends AppCompatActivity {
 //            textView2.setText(userBio);
 //        }
 //    }
+
+
+    /*
+    *  modified:   app/build.gradle
+        modified:   app/src/main/AndroidManifest.xml
+        modified:   app/src/main/java/com/example/myapplication/MainActivity.java
+        new file:   app/src/main/res/drawable-v24/batman.jpg
+*/
 }
