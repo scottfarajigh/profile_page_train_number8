@@ -17,7 +17,7 @@ public class EditProfile extends AppCompatActivity {
         setContentView(R.layout.activity_edit_profile);
 
         String userName =getIntent().getStringExtra(MainActivity.EXTRA_STRING_USERNAME);
-        String userBio = getIntent().getStringExtra(MainActivity.EXTRA_STRING_USERBio);
+        String userBio = getIntent().getStringExtra(MainActivity.EXTRA_STRING_USER_BIO);
         EditText editText = findViewById(R.id.editProfile_userName);
         EditText editText2 =findViewById(R.id.editProfile_userBio);
 
@@ -31,7 +31,7 @@ public class EditProfile extends AppCompatActivity {
                 String userBio =editText2.getText().toString();
                 Intent intent = new Intent();
                 intent.putExtra(MainActivity.EXTRA_STRING_USERNAME,userName);
-                intent.putExtra(MainActivity.EXTRA_STRING_USERBio,userBio);
+                intent.putExtra(MainActivity.EXTRA_STRING_USER_BIO,userBio);
                 setResult(Activity.RESULT_OK,intent);
                 finish();
 
