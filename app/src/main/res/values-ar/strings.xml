@@ -14,4 +14,5 @@
         <string name="alborzkaraj">البرز,کرج </string>
         <string name="main_saveinformation">دخیره اطلاعات</string>
         <string name="editprofile_hint">نام و نام خانوادگی خود را وارد کنید !</string>
+        <string name="editBio_hint">بیو خود را واد کنید :</string>
 </resources>
