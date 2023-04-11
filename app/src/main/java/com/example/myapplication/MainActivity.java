@@ -22,6 +22,22 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     public static final  String EXTRA_STRING_USERNAME = "userName";
     public static final  String EXTRA_STRING_USERBio = "userBio";
+    ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult activityResult) {
+            int result = activityResult.getResultCode();
+            Intent data = activityResult.getData();
+            if(result ==RESULT_OK && data != null){
+                String userName = data.getStringExtra(EXTRA_STRING_USERNAME);
+                String userBio =data.getStringExtra(EXTRA_STRING_USERBio);
+                TextView textView =findViewById(R.id.main_userName_tv);
+                textView.setText(userName);
+                TextView textView2 = findViewById(R.id.main_userBioTv);
+                textView2.setText(userBio);
+            }
+        }
+    });
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -89,7 +105,8 @@ public class MainActivity extends AppCompatActivity {
                 TextView userBioTv =findViewById(R.id.main_userBioTv);
                 intent.putExtra(EXTRA_STRING_USERNAME,userNaeTv.getText());
                 intent.putExtra(EXTRA_STRING_USERBio,userBioTv.getText());
-                startActivityForResult(intent,44);
+//                startActivityForResult(intent,44);
+                activityResultLauncher.launch(intent);
             }
         });
 
@@ -103,16 +120,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 44 && resultCode == Activity.RESULT_OK && data != null){
-            String userName = data.getStringExtra(EXTRA_STRING_USERNAME);
-            String userBio =data.getStringExtra(EXTRA_STRING_USERBio);
-            TextView textView =findViewById(R.id.main_userName_tv);
-            textView.setText(userName);
-            TextView textView2 = findViewById(R.id.main_userBioTv);
-            textView2.setText(userBio);
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if(requestCode == 44 && resultCode == Activity.RESULT_OK && data != null){
+//            String userName = data.getStringExtra(EXTRA_STRING_USERNAME);
+//            String userBio =data.getStringExtra(EXTRA_STRING_USERBio);
+//            TextView textView =findViewById(R.id.main_userName_tv);
+//            textView.setText(userName);
+//            TextView textView2 = findViewById(R.id.main_userBioTv);
+//            textView2.setText(userBio);
+//        }
+//    }
 }
