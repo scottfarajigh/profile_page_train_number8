@@ -7,10 +7,11 @@
     <string name="done">done </string>
     <string name="main_uidesign">ui/ux </string>
     <string name="main_deeplearning">deep learning </string>
-    <string name="main_provinceCity">province,city </string>
+    <string name="main_provinceCity">province,city(Covered Areas) </string>
     <string name="gilanRAsht">gilan,Rasht </string>
     <string name="tehrran">tehran,tehran </string>
     <string name="alborzkaraj">Alborz,karaj </string>
     <string name="main_saveinformation">save information </string>
     <string name="editprofile_hint">Enter Your Full Name Here</string>
+    <string name="editBio_hint">Enter Your BIO</string>
 </resources>
